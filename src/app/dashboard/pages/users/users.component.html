@@ -1,1 +1,21 @@
-<p>users works!</p>
+<app-title title="Listado de usuarios" />
+
+
+@defer () {
+    <ul>
+        @for (user of usersService.users(); track user.id) {
+            @defer (hydrate on hover) {
+                <li class="flex items-center my-2 cursor-pointer">
+                    <img [alt]="user.first_name" [srcset]="user.avatar" class="rounded w-14">
+                    <a [routerLink]="['/dashboard/user', user.id]" class="mx-5 hover:underline">
+                        {{user.first_name}} {{user.last_name}}
+                    </a>
+                </li>
+            }
+        } @empty {
+            <h3>No se encontraron usuarios</h3>
+        }
+    </ul>
+} @loading(minimum 1.5s) {
+    <h3>Cargando...</h3>
+}
