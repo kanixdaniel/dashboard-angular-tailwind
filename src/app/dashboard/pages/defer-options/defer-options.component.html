@@ -68,3 +68,33 @@
         </div>
     }
 </section>
+
+<section>
+    <hr class="mt-3 mb-8">
+    <h2>On immediate</h2>
+
+    @defer (on immediate) {
+        <app-heavy-loader-fast cssClass="bg-blue-500 h-20">
+            <span>Tada!</span>
+        </app-heavy-loader-fast>
+    } @placeholder {
+        <div class="w-full h-20 bg-purple-100">
+            wait to finish rendering
+        </div>
+    }
+</section>
+
+<section>
+    <hr class="mt-3 mb-8">
+    <h2>On timer</h2>
+
+    @defer (on timer(2000)) {
+        <app-heavy-loader-fast cssClass="bg-blue-500 h-20">
+            <span>Tada!</span>
+        </app-heavy-loader-fast>
+    } @placeholder {
+        <div class="w-full h-20 bg-purple-100">
+            wait 2 seconds
+        </div>
+    }
+</section>
