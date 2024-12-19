@@ -64,7 +64,16 @@ export const routes: Routes = [
     },
     {
         path: '',
-        redirectTo: '/dashboard',
+        // redirectTo: '/dashboard',
+        redirectTo: (route) => {
+            // console.log(route);
+            /**
+             * const authService = inject(AuthService);
+             * if(authService.isLoggedIn) ....
+             * else ....
+             */
+            return '/dashboard';
+        },
         pathMatch: 'full'
     },
     {
