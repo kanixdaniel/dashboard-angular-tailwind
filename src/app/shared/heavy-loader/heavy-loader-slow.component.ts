@@ -9,7 +9,7 @@ import { Component, Input } from '@angular/core';
   `
 })
 export class HeavyLoaderSlowComponent {
-    @Input({required: true}) cssClass!: string
+    @Input({required: true}) cssClass!: string;
 
     constructor() {
         const start = Date.now();
