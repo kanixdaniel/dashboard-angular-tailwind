@@ -98,3 +98,18 @@
         </div>
     }
 </section>
+
+<section>
+    <hr class="mt-3 mb-8">
+    <h2>On hover & on idle</h2>
+
+    @defer (on hover; prefetch on idle) {
+        <app-heavy-loader-fast cssClass="bg-blue-500 h-20">
+            <span>Tada!</span>
+        </app-heavy-loader-fast>
+    } @placeholder {
+        <div class="w-full h-20 bg-purple-100">
+            hover me!
+        </div>
+    }
+</section>
