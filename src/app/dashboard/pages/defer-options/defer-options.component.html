@@ -2,21 +2,23 @@
 
 <section>
     <h1 class="text-xl">Interactions</h1>
-    <hr class="my-2">
+    <hr class="mt-3 mb-8">
+    <h2>On interaction with div</h2>
 
     @defer (on interaction) {
         <app-heavy-loader-fast cssClass="bg-blue-500 h-20">
-            <span>On interaction</span>
+            <span>Tada!</span>
         </app-heavy-loader-fast>
     } @placeholder {
         <div class="w-full h-20 bg-purple-100">
-            Click en el div
+            Click on the div
         </div>
     }
 </section>
 
 <section>
-    <hr class="my-2">
+    <hr class="mt-3 mb-8">
+    <h2>On interaction with button</h2>
 
     <button #btnInteraction class="p-2 bg-blue-500 hover:bg-blue-700 transition-all rounded text-white my-2">
         Click me!
@@ -24,7 +26,41 @@
 
     @defer (on interaction(btnInteraction)) {
         <app-heavy-loader-fast cssClass="bg-blue-500 h-20">
-            <span>On interaction</span>
+            <span>Tada!</span>
+        </app-heavy-loader-fast>
+    } @placeholder {
+        <div class="w-full h-20 bg-purple-100">
+            Placeholder div
+        </div>
+    }
+</section>
+
+<section>
+    <hr class="mt-3 mb-8">
+    <h2>On hover on the div</h2>
+
+    @defer (on hover) {
+        <app-heavy-loader-fast cssClass="bg-blue-500 h-20">
+            <span>Tada!</span>
+        </app-heavy-loader-fast>
+    } @placeholder {
+        <div class="w-full h-20 bg-purple-100">
+            hover me!
+        </div>
+    }
+</section>
+
+<section>
+    <hr class="mt-3 mb-8">
+    <h2>On hover on the button</h2>
+
+    <button #btnHover class="p-2 bg-blue-500 hover:bg-blue-700 transition-all rounded text-white my-2">
+        hover me!
+    </button>
+
+    @defer (on hover(btnHover)) {
+        <app-heavy-loader-fast cssClass="bg-blue-500 h-20">
+            <span>Tada!</span>
         </app-heavy-loader-fast>
     } @placeholder {
         <div class="w-full h-20 bg-purple-100">
